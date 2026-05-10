@@ -1,1 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quadratic Zeros Finder</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <main>
+    <h1>Quadratic Zeros Finder</h1>
+    <p>Enter values for ax² + bx + c, then calculate the zeros.</p>
 
+    <form action="/calculate" method="post">
+      <label for="a">
+        a
+        <input id="a" name="a" type="number" step="any" value="{{ values.a }}" required>
+      </label>
+
+      <label for="b">
+        b
+        <input id="b" name="b" type="number" step="any" value="{{ values.b }}" required>
+      </label>
+
+      <label for="c">
+        c
+        <input id="c" name="c" type="number" step="any" value="{{ values.c }}" required>
+      </label>
+
+      <button type="submit">Find zeros</button>
+    </form>
+
+    <section class="result" aria-live="polite">
+      <h2>Result</h2>
+      <p>{{ result }}</p>
+    </section>
+  </main>
+</body>
+</html>
